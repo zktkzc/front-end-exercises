@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 100px;
+            background-color: rgb(241, 239, 235);
+            border-radius: 5px;
+        }
+
+        .head {
+            height: 40px;
+            width: 100%;
+            background-color: #deecf7;
+            border-radius: 5px;
+        }
+
+        .kq {
+            color: #66b2ec;
+            font-size: 18px;
+            margin-left: 10px;
+            padding-top: 8px;
+        }
+
+        .body {
+            height: 60px;
+            width: 100%;
+            position: relative;
+        }
+
+        #qd {
+            position: absolute;
+            top: 0;
+            left: 10%;
+            bottom: 0;
+            margin: auto;
+            width: 50px;
+            background-color: #75bed9;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: aliceblue;
+            border-radius: 6px;
+        }
+
+        #qt {
+            position: absolute;
+            top: 0;
+            right: 10%;
+            bottom: 0;
+            margin: auto;
+            width: 50px;
+            background-color: #75bed9;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: aliceblue;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="head">
+        <div class="kq">考勤</div>
+    </div>
+    <div class="body">
+        <div id="qd">签到</div>
+        <div id="qt">签退</div>
+    </div>
+</div>
+
+<script>
+    let i = 0;
+    const qd = document.getElementById('qd');
+    const qt = document.getElementById('qt');
+
+    function getTime() {
+        const date = new Date();
+        let time;
+
+        const h = date.getHours();
+        let min = date.getMinutes();
+
+        if (min < 10) {
+            min = "0" + min;
+        }
+
+        return time = h + ":" + min;
+    }
+
+    qd.onclick = function () {
+        i += 1;
+        this.innerHTML = getTime();
+        qd.style.backgroundColor = "#A4CE9E";
+    }
+
+    qt.onclick = function () {
+        i += 1;
+        this.innerHTML = getTime();
+        qt.style.backgroundColor = "#A4CE9E";
+    }
+</script>
+</body>
+</html>
